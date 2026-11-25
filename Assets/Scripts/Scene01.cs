@@ -115,6 +115,8 @@ public class Scene01 : MonoBehaviour
 
     IEnumerator EventFive()
     {
+        acceptButton.SetActive(false);
+        rejectButton.SetActive(false);
         nextButton.SetActive(false);
         mainTextObject.SetActive(true);
         charName.GetComponent<TMPro.TMP_Text>().text = "Raka";
@@ -160,6 +162,10 @@ public class Scene01 : MonoBehaviour
         else if (eventPos == 4)
         {
             StartCoroutine(EventFour());
+        }
+        else if (eventPos == 6)
+        {
+            StartCoroutine(EventSix());
         }
         else if (eventPos == -1)
         {
