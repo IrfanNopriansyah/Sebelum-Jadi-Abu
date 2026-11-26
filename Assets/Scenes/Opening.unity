@@ -254,7 +254,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Narator
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 79459efec17a4d00a321bdcc27bbc385, type: 2}
@@ -481,13 +481,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e19cab354bd16fc4891af2ea5dac1cc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textBox: {fileID: 15563445}
+  mainTextObject: {fileID: 1786462061}
   fadeIn: {fileID: 1520800578}
   textToSpeak: 
   currentTextLength: 0
   textLength: 0
-  mainTextObject: {fileID: 0}
+  textBox: {fileID: 15563445}
   nextButton: {fileID: 1781402651}
+  charName: {fileID: 137912381}
 --- !u!1 &664420278
 GameObject:
   m_ObjectHideFlags: 0
@@ -1003,8 +1004,9 @@ GameObject:
   - component: {fileID: 1786462062}
   - component: {fileID: 1786462064}
   - component: {fileID: 1786462063}
+  - component: {fileID: 1786462065}
   m_Layer: 0
-  m_Name: Text
+  m_Name: SpeakText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1049,8 +1051,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Sejak Januari hingga 29 September 2026, tercatat 1.279 kejadian kebakaran
-    hutan dan lahan di Indonesia.
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 79459efec17a4d00a321bdcc27bbc385, type: 2}
@@ -1127,6 +1128,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1786462061}
   m_CullTransparentMesh: 1
+--- !u!114 &1786462065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1786462061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69b18cb731eb80d408d8683cfb8e6be7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transferText: 
+  internalCount: 0
 --- !u!1 &1957662281
 GameObject:
   m_ObjectHideFlags: 0

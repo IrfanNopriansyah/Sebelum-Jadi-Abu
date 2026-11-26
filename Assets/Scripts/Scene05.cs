@@ -282,9 +282,9 @@ IEnumerator EventEleven()
         {
             StartCoroutine(EventSeven());
         }
-        else if (eventPos == 11)
+        else if (eventPos == 12)
         {
-            StartCoroutine(EventEleven());
+            StartCoroutine(EventTwelve());
         }
         else if (eventPos == -1)
         {
