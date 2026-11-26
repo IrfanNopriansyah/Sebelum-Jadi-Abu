@@ -14,6 +14,8 @@ public class Scene02 : MonoBehaviour
     [SerializeField] GameObject nextButton;
     [SerializeField] int eventPos = 0;
     [SerializeField] GameObject charName;
+    [SerializeField] GameObject raka;
+    [SerializeField] GameObject wahyu;
 
     void Update()
     {
@@ -22,6 +24,8 @@ public class Scene02 : MonoBehaviour
     void Start(){
         textBox.SetActive(false);
         nextButton.SetActive(false);
+        raka.SetActive(false);
+        wahyu.SetActive(false);
         StartCoroutine(EventStarter());
     }
 
@@ -47,6 +51,8 @@ public class Scene02 : MonoBehaviour
     {
         nextButton.SetActive(false);
         mainTextObject.SetActive(true);
+        raka.SetActive(true);
+        yield return new WaitForSeconds(0.5f);
         charName.GetComponent<TMPro.TMP_Text>().text = "Raka";
         textToSpeak = "Hutan ini masih sangat lebat dan segar. Udara di sini jauh berbeda dengan kota. Rasanya sayang sekali kalau semua pohon besar ini harus rata dengan tanah...";
         mainTextObject.GetComponent<TMPro.TMP_Text>().text = textToSpeak;
@@ -89,7 +95,7 @@ public class Scene02 : MonoBehaviour
         }
         else if (eventPos == -1)
         {
-            SceneManager.LoadScene("Scene02");
+            SceneManager.LoadScene("Scene03");
         }
     }
 }

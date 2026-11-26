@@ -16,6 +16,8 @@ public class Scene01 : MonoBehaviour
     [SerializeField] GameObject rejectButton;
     [SerializeField] int eventPos = 0;
     [SerializeField] GameObject charName;
+    [SerializeField] GameObject raka;
+    [SerializeField] GameObject wahyu;
 
     void Update()
     {
@@ -26,6 +28,8 @@ public class Scene01 : MonoBehaviour
         nextButton.SetActive(false);
         acceptButton.SetActive(false);
         rejectButton.SetActive(false);
+        raka.SetActive(false);
+        wahyu.SetActive(false);
         StartCoroutine(EventStarter());
     }
 
@@ -33,7 +37,8 @@ public class Scene01 : MonoBehaviour
         fadeIn.SetActive(true);
         yield return new WaitForSeconds(2);
         fadeIn.SetActive(false);
-        //char
+        wahyu.SetActive(true);
+        yield return new WaitForSeconds(0.5f);
         textBox.SetActive(true);
         charName.GetComponent<TMPro.TMP_Text>().text = "Pak Wahyu";
         textToSpeak = "Perusahaan kita harus mengejar target produksi tahun ini. Kita akan membuka lahan perkebunan sawit baru di sektor timur.";
@@ -50,6 +55,8 @@ public class Scene01 : MonoBehaviour
     IEnumerator EventOne()
     {
         nextButton.SetActive(false);
+        wahyu.SetActive(true);
+        yield return new WaitForSeconds(0.5f);
         mainTextObject.SetActive(true);
         charName.GetComponent<TMPro.TMP_Text>().text = "Pak Wahyu";
         textToSpeak = "Raka, kamu karyawan yang ulet. Saya tunjuk kamu untuk ikut langsung dalam tim proyek ekspansi ini. Bagaimana, kamu siap?";
@@ -82,6 +89,8 @@ public class Scene01 : MonoBehaviour
         acceptButton.SetActive(false);
         rejectButton.SetActive(false);
         nextButton.SetActive(false);
+        raka.SetActive(true);
+        yield return new WaitForSeconds(0.5f);
         mainTextObject.SetActive(true);
         charName.GetComponent<TMPro.TMP_Text>().text = "Raka";
         textToSpeak = "Siap, Pak Wahyu! Saya sangat membutuhkan kesempatan ini dan siap menjalankan tugas.";
@@ -100,6 +109,8 @@ public class Scene01 : MonoBehaviour
     {
         nextButton.SetActive(false);
         mainTextObject.SetActive(true);
+        wahyu.SetActive(true);
+        yield return new WaitForSeconds(0.5f);
         charName.GetComponent<TMPro.TMP_Text>().text = "Pak Wahyu";
         textToSpeak = "Bagus. Loyalitas seperti ini yang perusahaan butuhkan.";
         mainTextObject.GetComponent<TMPro.TMP_Text>().text = textToSpeak;
@@ -118,6 +129,8 @@ public class Scene01 : MonoBehaviour
         acceptButton.SetActive(false);
         rejectButton.SetActive(false);
         nextButton.SetActive(false);
+        raka.SetActive(true);
+        yield return new WaitForSeconds(0.5f);
         mainTextObject.SetActive(true);
         charName.GetComponent<TMPro.TMP_Text>().text = "Raka";
         textToSpeak = "Maaf, Pak. Saya khawatir belum siap memegang tanggung jawab ekspansi lapangan sebesar itu.";
@@ -135,6 +148,8 @@ public class Scene01 : MonoBehaviour
     IEnumerator EventSix()
     {
         nextButton.SetActive(false);
+        wahyu.SetActive(true);
+        yield return new WaitForSeconds(0.5f);
         mainTextObject.SetActive(true);
         charName.GetComponent<TMPro.TMP_Text>().text = "Pak Wahyu";
         textToSpeak = "Ini bukan tawaran sukarela, Raka. Ini perintah kerja. Anggap saja ini ujian kelayakanmu di perusahaan.";
@@ -151,6 +166,8 @@ public class Scene01 : MonoBehaviour
 
     public void NextButton()
     {
+        wahyu.SetActive(false);
+        raka.SetActive(false);
         if (eventPos == 1)
         {
             StartCoroutine(EventOne());
